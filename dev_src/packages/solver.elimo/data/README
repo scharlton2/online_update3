@@ -1,0 +1,30 @@
+﻿The 2011 Tohoku earthquake tsunami brought great damages to human lives, industries and economics in Japan, and provided an important lesson for disaster reduction and evacuation.
+We have reconsidered the disaster prevention policy and tried to renew multilateral regional disaster plans for multiple scenarios of tsunami onsets.
+The estimation of regional tsunami heights provide fundamental conditions to design the disaster plans; developing infrastructures,  hazard maps and managing evacuation for various scenarios.
+While reasonable tsunami computation to predict the tsunami heights along coasts need to be performed, it requires technical knowledge and experiences to operate computer simulators as well as expensive high-performance computers.
+Whereas local government needs to make the local disaster and evacuation plans to save the local resident against tsunamis, it may be difficult for them to predict the heights by themselves because the absence of human and computer resources, which may slow down procedures of planning.   
+
+iRIC-ELIMO has been developed with a motto of "simple and easy tsunami computation" for people with minimum knowledge to operate Window softwares, which is capable of reliable estimations of tsunami generation, propagation and evolution on coasts on easy-performable GUI environment provided by iRIC.   
+Users should carefully confirm the following specifications of ELIMO and understand the model assumptions and limits of the applications.
+Any applications beyond the model conditions and computational accuracies used in ELIMO are not supported. 
+It should be noted that iRIC-ELIMO cannot be held responsible for any disadvantages, loss, cost which may be incurred by ELIMO.
+Confirm and agree Terms of Conditions before using ELIMO. 
+
+ELIMO Development Team
+Yasunori Watanabe, Hokkaido University
+August, 2013
+
+ELIMO 1.1 Specification　(Nobember 2013)
+Governing equation; nonlinear long wave equation
+Coordinate system; Spherical global coordinate
+Computational method; Euler-Lagrangian finite difference method with third order accuracy (CIP metod + Predictor-Corrector method)
+Bathymetry; 500m grid data of water depth (downloadable from Japan Oceanographic Data Center) or General Bathymetric Chart of the Oceans (GEBCO) altitude data
+Shore boundary condition; Impermeable condition at shore (no inundation on land area)　[Run-up computation may be available at version 2.0]
+Open boundary condition; Radiation condition + Sponge zone (additional energy dissipation)
+Fault model; Rectangular fault model [arbitrary fault model with asperity variation may be introduced at version 2.0]
+
+Update Records
+July 2013　Release of ELIMO 1.0
+November 2013　ELIMO 1.1; Release a format conversion software "gebco_ conv" for GEBCO 1 minuet altitude grid data that is downloadable from British Oceanographic Data Center. The user’s guide updated.
+June 2015 ELIMO 2.0; "gebco2s2014" for 2014 format of GEBCO data has been provided. The elastic rectangular fault model by Okada (1985) has been introduced. The tsunami generation model by Tanioka and Satake (1996) has been added. The arbitrary fault models with asperities can be used for the ELIMO computation.
+

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Package>
+	<DisplayName>SRM</DisplayName>
+	<Description>The Storage Routing Model (SRM) solver is a runoff calculation solver that uses storage routing models.</Description>
+	<Version>1.0.2</Version>
+	<Default>true</Default>
+	<ReleaseDate>2016-02-10</ReleaseDate>
+	<SortingPriority>50</SortingPriority>
+	<Script>installscript.qs</Script>
+</Package>

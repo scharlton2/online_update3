@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Package>
+	<DisplayName>NaysEddyGrid</DisplayName>
+	<Description>"Cartesian Grid for NaysEddy" is a Cartesian grid generator for the solver "NaysEddy".</Description>
+	<Version>1.1.1</Version>
+	<Default>true</Default>
+	<ReleaseDate>2020-02-16</ReleaseDate>
+	<SortingPriority>50</SortingPriority>
+	<Script>installscript.qs</Script>
+</Package>

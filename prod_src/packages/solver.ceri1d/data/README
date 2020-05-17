@@ -1,0 +1,5 @@
+﻿CERI1D is an analytical solver developed by Yasuhiro YOSHIKAWA (Kitami Institute of Technology) and CERI for calculation of one-dimensional unsteady flow in rivers. Takuya INOUE of CERI and Michihiro HAMAKI of Kaihatsu Koei Co., Ltd. adapted the calculation model for correspondence to an analytical solver for iRIC. (CERI: Civil Engineering Research Institute for Cold Region; iRIC: International River Interface Cooperative)
+
+The model can be used to calculate variables relating to river flow, river ice deformation and tsunami in rivers. The main input data are cross-sections, bed material, flow discharge (upstream) and water level (downstream). For river ice deformation calculation, data on average air temperature, water temperature (upstream), river ice discharge (upstream) and river ice area (downstream) are required.
+
+The results of such calculation provide basic data for consideration of countermeasures in flood management and disaster prevention.

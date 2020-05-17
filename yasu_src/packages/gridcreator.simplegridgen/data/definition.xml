@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GridGeneratorDefinition 
+  xmlns="www.iric.net/GridGeneratorDefinition/1.0"
+  name="gridgen" caption="Simple Grid Generator" version="1.0" 
+  copyright="Jonathan Nelson" executable="simplegridgen.exe" gridtype="structured2d"
+>
+
+<GridGeneratingCondition>
+  <Tab name="Simple Channel Builder" caption="Simple Channel Shape">
+    <GroupBox caption="Streamwise Geometry">  
+    <Item name="mo" caption="Channel Length (m)">
+        <Definition valueType="real" default="200.0">
+        </Definition>
+      </Item>
+      <Item name="width" caption="Channel Width (m)">
+        <Definition valueType="real" default="10.0">
+        </Definition>
+      </Item>
+      <Item name="slope" caption="Channel Slope (m/m)">
+        <Definition valueType="real" default=".001">
+        </Definition>
+      </Item>
+      <Item name="omega" caption="Channel Crossing Angle (degrees)">
+        <Definition valueType="real" default="60.0">
+        </Definition>
+      </Item>
+      <Item name="lambda" caption="Number of Meander Wavelengths">
+        <Definition valueType="real" default="2">
+        </Definition>
+      </Item>
+    </GroupBox>
+    <GroupBox caption="Computational Grid">
+      <Item name="ns" caption="Number of stream-wise nodes">
+        <Definition valueType="integer" default="201" max="10000" min="1" >
+        </Definition>
+      </Item>
+      <Item name="nn" caption="Number of cross-stream nodes">
+        <Definition valueType="integer" default="11" max="10000" min="1" >
+        </Definition>
+      </Item>
+    </GroupBox>
+    <GroupBox caption="Cross-sectional Geometry">
+    <Item name="inum" caption="Cross-section Type">
+      <Definition valueType="integer" default="0">
+	        <Enumeration value="0" caption="Flat"/>
+          <Enumeration value="1" caption="Parabolic"/>
+      </Definition>
+    </Item>
+      <GroupBox caption="Flat">
+        <Item name="fd" caption="Flat Bed Depth (m)">
+          <Definition valueType="real" default="1.0">
+            <Condition type="isEqual" target="inum" value="0"/>
+          </Definition>
+        </Item>
+      </GroupBox>
+      <GroupBox caption="Parabolic">
+        <Item name="bh" caption="Parabolic Bank Height (m)">
+          <Definition valueType="real" default="0.0">
+            <Condition type="isEqual" target="inum" value="1"/>
+          </Definition>
+        </Item>
+        <Item name="pbmd" caption="Parabolic Maimum Depth (m)">
+          <Definition valueType="real" default="0.7">
+            <Condition type="isEqual" target="inum" value="1"/>
+          </Definition>
+        </Item>
+     </GroupBox>
+    </GroupBox>
+    <GroupBox caption="Point Bar Geometry">
+    <Item name="amp" caption="Point bar amplitude (0-1)">
+      <Definition valueType="real" default="0.0">
+      </Definition>
+    </Item>
+    <Item name="phas" caption="Point bar - bend apex phase difference (degrees) (+downstream)">
+      <Definition valueType="real" default="0.0">
+      </Definition>
+    </Item>
+    </GroupBox>
+</Tab>
+</GridGeneratingCondition>
+<ErrorCodes>
+    <ErrorCode value="1" caption="IMax * JMax must be smaller than 100,000." />
+  </ErrorCodes>
+</GridGeneratorDefinition >
+

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Package>
+	<DisplayName>Nays2D Flood v5.0 64 bit Dev</DisplayName>
+	<Description>Nays 2D Flood is a flood flow analysis solver that relies on unsteady 2-dimensional plane flow simulation using boundary-fitted coordinates as the general curvilinear coordinates.</Description>
+	<Version>5.1.1509</Version>
+	<Default>true</Default>
+	<ReleaseDate>2018-11-30</ReleaseDate>
+	<SortingPriority>50</SortingPriority>
+	<Script>installscript.qs</Script>
+</Package>

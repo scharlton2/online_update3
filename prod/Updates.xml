@@ -1,0 +1,505 @@
+<?xml version="1.0" ?><Updates>
+ <ApplicationName>{AnyApplication}</ApplicationName>
+ <ApplicationVersion>1.0.0</ApplicationVersion>
+ <Checksum>true</Checksum>
+ <PackageUpdate>
+  <Name>gridcreator</Name>
+  <DisplayName>Grid Generators</DisplayName>
+  <Description>Grid Generators that run on iRIC GUI</Description>
+  <Version>1.0.0</Version>
+  <Default>true</Default>
+  <ReleaseDate>2017-04-18</ReleaseDate>
+  <SortingPriority>20</SortingPriority>
+  <UpdateFile CompressedSize="0" OS="Any" UncompressedSize="0"/>
+  <SHA1>673be26c1b7019ef052c4618a32559d936f69aac</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridexporter_plugin</Name>
+  <DisplayName>Grid Exporter plugins</DisplayName>
+  <Description>Plugins for exporting grid</Description>
+  <Version>1.0.0</Version>
+  <Default>true</Default>
+  <ReleaseDate>2017-04-18</ReleaseDate>
+  <SortingPriority>29</SortingPriority>
+  <UpdateFile CompressedSize="0" OS="Any" UncompressedSize="0"/>
+  <SHA1>365b1f219aef86f2be139e85a0b903ac5746e96f</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridimporter_plugin</Name>
+  <DisplayName>Grid Importer plugins</DisplayName>
+  <Description>Plugins for importing grid</Description>
+  <Version>1.0.0</Version>
+  <Default>true</Default>
+  <ReleaseDate>2017-04-18</ReleaseDate>
+  <SortingPriority>30</SortingPriority>
+  <UpdateFile CompressedSize="0" OS="Any" UncompressedSize="0"/>
+  <SHA1>e49bcacd553f8b81b20bcbbb04833938911d8f3b</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridimporter_plugin.structured2dgridnaysgrid</Name>
+  <DisplayName>Structured grid Nays grid file importer</DisplayName>
+  <Description>Structured grid Nays grid file importer</Description>
+  <Version>1.0.0</Version>
+  <Default>true</Default>
+  <ReleaseDate>2015-07-01</ReleaseDate>
+  <SortingPriority>100</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="10035" OS="Any" UncompressedSize="24386"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>73b887bb5cc35daa191d4ca56eebeedbbebe458e</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridimporter_plugin.unstructured2dgridtriangle</Name>
+  <DisplayName>Unstructured grid TRIANGLE file importer</DisplayName>
+  <Description>Unstructured grid TRIANGLE file importer</Description>
+  <Version>1.0.0</Version>
+  <Default>true</Default>
+  <ReleaseDate>2015-07-01</ReleaseDate>
+  <SortingPriority>100</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="9643" OS="Any" UncompressedSize="24932"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>438572939ff223976faa83e559129624f6d50daf</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gui</Name>
+  <DisplayName>iRIC GUI</DisplayName>
+  <Description>Graphical User Interface programs of iRIC</Description>
+  <Version>1.0.0</Version>
+  <ReleaseDate>2017-04-18</ReleaseDate>
+  <SortingPriority>100</SortingPriority>
+  <UpdateFile CompressedSize="0" OS="Any" UncompressedSize="0"/>
+  <SHA1>80cae654be6c9f4c0c00151a5e229f3ac2f64dc7</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver</Name>
+  <DisplayName>Solvers</DisplayName>
+  <Description>Solvers that run on iRIC GUI</Description>
+  <Version>1.0.0</Version>
+  <Default>true</Default>
+  <ReleaseDate>2017-04-18</ReleaseDate>
+  <SortingPriority>20</SortingPriority>
+  <UpdateFile CompressedSize="0" OS="Any" UncompressedSize="0"/>
+  <SHA1>ef7d47cc40503db20a514a8ee7a555eee0316a7f</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.sac</Name>
+  <DisplayName>SAC</DisplayName>
+  <Description>Slope Area Computation Program</Description>
+  <Version>2.0.0</Version>
+  <Default>true</Default>
+  <ReleaseDate>2016-06-06</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="51600" OS="Any" UncompressedSize="131672"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>c82813b43abb66d5115d1c0794965bab2fe63efb</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gui.rivmaker</Name>
+  <DisplayName>Rivmaker</DisplayName>
+  <Description>Riv file maker. You can create *.riv files from survey data.</Description>
+  <Version>1.0.5</Version>
+  <Default>true</Default>
+  <ReleaseDate>2018-05-22</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="8053713" OS="Any" UncompressedSize="26604222"/>
+  <DownloadableArchives>accessible.7z,bearer.7z,iconengines.7z,imageformats.7z,languages.7z,platforms.7z,samples.7z,testdata.7z,content.7z</DownloadableArchives>
+  <SHA1>52a0185b736d54719b832dce25d87a81628ff066</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.mflow</Name>
+  <DisplayName>Mflow</DisplayName>
+  <Description>Mflow_02 is a solver to calculate two-dimensional plane unsteady flow and riverbed variation using unstructured meshes of the finite element method.</Description>
+  <Version>3.1.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2018-05-21</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="2392933" OS="Any" UncompressedSize="11346847"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>d3e76a670ac0fbdc87979094484b90b9cb750bdb</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.elimo</Name>
+  <DisplayName>ELIMO</DisplayName>
+  <Description>iRIC-ELIMO has been developed with a motto of &quot;simple and easy tsunami computation&quot; for people with minimum knowledge to operate Window softwares, which is capable of reliable estimations of tsunami generation, propagation and evolution on coasts on easy-performable GUI environment provided by iRIC.</Description>
+  <Version>2.0.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2018-05-28</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="533152" OS="Any" UncompressedSize="2543458"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>9e00eccec79759721d910b03d8069b330bb5884c</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.morpho2dh</Name>
+  <DisplayName>Morpho2DH</DisplayName>
+  <Description/>
+  <Version>1.0.0</Version>
+  <Default>true</Default>
+  <ReleaseDate>2014-11-01</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="304736" OS="Any" UncompressedSize="852462"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>3c9591cc87144116aef4cf478ba86b92a65e6e36</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.srm</Name>
+  <DisplayName>SRM</DisplayName>
+  <Description>The Storage Routing Model (SRM) solver is a runoff calculation solver that uses storage routing models.</Description>
+  <Version>1.0.2</Version>
+  <Default>true</Default>
+  <ReleaseDate>2016-02-10</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="36310" OS="Any" UncompressedSize="112785"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>1903bd9d5f6081e2e6d99e14d84a71a1e48f1228</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.evatrip</Name>
+  <DisplayName>EvaTRiP</DisplayName>
+  <Description>EvaTRiP (Evaluation Tools for River environmental Planning) are developed by Aqua Restoration Research Center in PWRI(National Research and Development Agency Public Works Research Institute),Masahiko Sekine Dr.Eng. Professor of Yamaguchi University, Norio Tanaka Dr.Eng. Professor of Saitama University and Junji Yagisawa Dr.Eng Associate Professor of Saitama University.</Description>
+  <Version>3.0.0</Version>
+  <Default>true</Default>
+  <ReleaseDate>2018-06-05</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="64044" OS="Any" UncompressedSize="204390"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>f2245f49b873b1226203258c1f37a7620c514ce3</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.nayscube</Name>
+  <DisplayName>NaysCUBE</DisplayName>
+  <Description>&quot;NaysCUBE&quot; is an analytical solver for calculation of unsteady three-dimensional open channel flows, riverbed deformations and driftwood behavior using boundary-fitted coordinates within generalized curvilinear coordinates.</Description>
+  <Version>3.43.3</Version>
+  <Default>true</Default>
+  <ReleaseDate>2018-06-28</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="1043814" OS="Any" UncompressedSize="4283281"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>277f0064c801960959193c085dbf3232192fe845</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.ceri1d</Name>
+  <DisplayName>CERI1D</DisplayName>
+  <Description>CERI1D</Description>
+  <Version>1.1.6</Version>
+  <Default>true</Default>
+  <ReleaseDate>2018-08-24</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="89625" OS="Any" UncompressedSize="315348"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>26a4947b6821a11979bcc0151beeb03e87d3f2f6</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>runtime</Name>
+  <DisplayName>Runtime libraries</DisplayName>
+  <Description>Visual C++ runtime libraries needed to run iRIC system</Description>
+  <Version>1.1.0</Version>
+  <ReleaseDate>2018-10-31</ReleaseDate>
+  <SortingPriority>5</SortingPriority>
+  <ForcedInstallation>true</ForcedInstallation>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="20329980" OS="Any" UncompressedSize="22378920"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>8a64c4f8e5cca637692dfdde9bd888acca740ec3</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.river2d</Name>
+  <DisplayName>River2D</DisplayName>
+  <Description/>
+  <Version>1.0.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2018-11-16</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="238486" OS="Any" UncompressedSize="900946"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>07f002fc4e5577f4c96e16687bbe8e2d6080fc50</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.nays2dflood</Name>
+  <DisplayName>Nays2DFlood</DisplayName>
+  <Description>Nays 2D Flood is a flood flow analysis solver that relies on unsteady 2-dimensional plane flow simulation using boundary-fitted coordinates as the general curvilinear coordinates.</Description>
+  <Version>5.0.1509</Version>
+  <Default>true</Default>
+  <ReleaseDate>2018-11-30</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="3920029" OS="Any" UncompressedSize="19217553"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>19ae422601fe7867f5b5987d1e6ef200b13b0b2d</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.nayseddy</Name>
+  <DisplayName>NaysEddy</DisplayName>
+  <Description>&quot;NaysEddy&quot; is a three-dimensional solver for calculation of unsteady flows using Cartesian coordinates.</Description>
+  <Version>1.1.0</Version>
+  <Default>true</Default>
+  <ReleaseDate>2019-01-01</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="1001692" OS="Any" UncompressedSize="3869776"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>4f09852ec9daad687ee2e0481db022fb6f8ff94d</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.dhabsim</Name>
+  <DisplayName>DHABSIM</DisplayName>
+  <Description>DHABSIM</Description>
+  <Version>1.1.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2019-01-22</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="43580" OS="Any" UncompressedSize="127764"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>c46404e95fabd2e12cc96935b13b5f5e7d93dc66</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.fastmech</Name>
+  <DisplayName>FaSTMECH</DisplayName>
+  <Description>FaSTMECH</Description>
+  <Version>1.1.2</Version>
+  <Default>true</Default>
+  <ReleaseDate>2018-08-20</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="3583571" OS="Any" UncompressedSize="17961799"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>9bffe7b1ea0e5c2543bfec124206a548435ecc8f</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.cap</Name>
+  <DisplayName>CAP</DisplayName>
+  <Description>Culvart Analysis Program</Description>
+  <Version>2.0.5</Version>
+  <Default>true</Default>
+  <ReleaseDate>2019-05-20</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="865393" OS="Any" UncompressedSize="2127243"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>f255b598fea154c82249414f8f4160ccbcd73111</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.storm</Name>
+  <DisplayName>SToRM</DisplayName>
+  <Description/>
+  <Version>0.4.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2019-11-13</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="211708" OS="Any" UncompressedSize="616207"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>df49de407d68edbde8d5e604325a9543a32c4448</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridimporter_plugin.structured2dgridnayscsv</Name>
+  <DisplayName>Structured grid Nays CSV file importer</DisplayName>
+  <Description>Structured grid Nays CSV file importer</Description>
+  <Version>1.1.0</Version>
+  <Default>true</Default>
+  <ReleaseDate>2019-11-30</ReleaseDate>
+  <SortingPriority>100</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="13733" OS="Any" UncompressedSize="36158"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>c02e3e30639acc12895fc6a9c2705cf6935b1286</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gui.runtime</Name>
+  <DisplayName>iRIC GUI Runtime</DisplayName>
+  <Description>Runtime DLLs for iRIC Main GUI</Description>
+  <Version>1.1.2</Version>
+  <ReleaseDate>2020-01-20</ReleaseDate>
+  <SortingPriority>100</SortingPriority>
+  <ForcedInstallation>true</ForcedInstallation>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="65796922" OS="Any" UncompressedSize="252575486"/>
+  <DownloadableArchives>accessible.7z,bearer.7z,iconengines.7z,imageformats.7z,languages.7z,licenses.7z,platforms.7z,pythonmodule.7z,udunits.7z,content.7z</DownloadableArchives>
+  <SHA1>84eefa4244453df4dc19f391fb6e541b81b31925</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.nays2dh</Name>
+  <DisplayName>Nays2DH</DisplayName>
+  <Description>Nays2DH is a computational model for simulating horizontal two-dimensional (2D) flow, sediment transport, morphological changes of bed and banks in rivers.</Description>
+  <Version>1.5.301</Version>
+  <Default>true</Default>
+  <ReleaseDate>2010-01-30</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="4505649" OS="Any" UncompressedSize="20851800"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>683ad31fc715e0c6233692a4e11a4f8e5ff99a52</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridexporter_plugin.landxml</Name>
+  <DisplayName>Grid LandXML exporter</DisplayName>
+  <Description>Grid LandXML exporter</Description>
+  <Version>1.0.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2020-02-03</ReleaseDate>
+  <SortingPriority>30</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="10598" OS="Any" UncompressedSize="26842"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>f262cfd3cafcd3a9943fddc8fb63466506855868</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridexporter_plugin.structured2dgridnayscsv</Name>
+  <DisplayName>Structured grid Nays CSV exporter</DisplayName>
+  <Description>Structured grid Nays CSV exporter</Description>
+  <Version>1.1.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2020-02-03</ReleaseDate>
+  <SortingPriority>30</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="12047" OS="Any" UncompressedSize="32848"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>b4547c77e9600f29bdd90334bd624c991510d274</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridexporter_plugin.structured2dgridnaysgrid</Name>
+  <DisplayName>Structured grid Nays grid file exporter</DisplayName>
+  <Description>Structured grid Nays grid file exporter</Description>
+  <Version>1.0.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2020-02-03</ReleaseDate>
+  <SortingPriority>30</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="9046" OS="Any" UncompressedSize="22117"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>6f641c7ea54534a009c08f283cb75c2b593f60de</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridexporter_plugin.structured2dgridvtk</Name>
+  <DisplayName>Structured grid VTK file exporter</DisplayName>
+  <Description>Structured grid VTK file exporter</Description>
+  <Version>1.0.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2020-02-03</ReleaseDate>
+  <SortingPriority>30</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="8581" OS="Any" UncompressedSize="20510"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>24e49b5a6fffc184f642baf61cc8d97f54e53b79</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridexporter_plugin.unstructured2dgridvtk</Name>
+  <DisplayName>Unstructured grid VTK file exporter</DisplayName>
+  <Description>Unstructured grid VTK file exporter</Description>
+  <Version>1.0.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2020-02-03</ReleaseDate>
+  <SortingPriority>30</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="8579" OS="Any" UncompressedSize="20516"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>22975e9b14a4a95df011d91ea93ba37f8ba433e8</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridcreator.multi_grid_generator</Name>
+  <DisplayName>Multifunction Grid Genarator</DisplayName>
+  <Description>Multifunction Grid Genarator</Description>
+  <Version>1.0.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2020-02-16</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="39624" OS="Any" UncompressedSize="133978"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>a9444c84d9df3b655db4ca75857046c139902f72</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridcreator.nayseddygrid</Name>
+  <DisplayName>NaysEddyGrid</DisplayName>
+  <Description>&quot;Cartesian Grid for NaysEddy&quot; is a Cartesian grid generator for the solver &quot;NaysEddy&quot;.</Description>
+  <Version>1.1.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2020-02-16</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="19133" OS="Any" UncompressedSize="51479"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>f5858ff6287f8e12024f75603fb86946ac5b9013</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridcreator.simplegridgen</Name>
+  <DisplayName>Simple Grid Generator</DisplayName>
+  <Description>Simple Grid Generator</Description>
+  <Version>1.0.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2020-02-16</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="14802" OS="Any" UncompressedSize="65498"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>9f2a558c7cefd55661fe028ed9d78eb3073d59cb</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridcreator.nays2dv</Name>
+  <DisplayName>Nays2DVGrid</DisplayName>
+  <Description>Grid Generator for Nays2DV</Description>
+  <Version>1.0.1</Version>
+  <Default>true</Default>
+  <ReleaseDate>2020-03-02</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="32154" OS="Any" UncompressedSize="112588"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>eb35052358ac75542cb15b2b6de25602c5b8abd8</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>solver.nays2dv</Name>
+  <DisplayName>Nays2dV vertical 2D model</DisplayName>
+  <Description/>
+  <Version>1.5.202</Version>
+  <Default>true</Default>
+  <ReleaseDate>2020-03-13</ReleaseDate>
+  <SortingPriority>50</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="344820" OS="Any" UncompressedSize="1015321"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>bfa7ec13fb8dcfb45fd6e03b1c2764e043cebfd9</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gridimporter_plugin.structured2dgridgdal</Name>
+  <DisplayName>Structured grid GDAL importer</DisplayName>
+  <Description>Structured grid GDAL importer to import from *.tif and *.asc</Description>
+  <Version>1.0.0</Version>
+  <Default>true</Default>
+  <ReleaseDate>2020-04-17</ReleaseDate>
+  <SortingPriority>100</SortingPriority>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="21141" OS="Any" UncompressedSize="79067"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>73b4bf3d0e386aba09259bee9b0ef7abe435b466</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>gui.prepost</Name>
+  <DisplayName>iRIC GUI 3.0</DisplayName>
+  <Description>iRIC Main GUI</Description>
+  <Dependencies>runtime,gui.runtime</Dependencies>
+  <Version>3.0.19.6325</Version>
+  <ReleaseDate>2020-05-15</ReleaseDate>
+  <SortingPriority>100</SortingPriority>
+  <ForcedInstallation>true</ForcedInstallation>
+  <Script>installscript.qs</Script>
+  <UpdateFile CompressedSize="3177260" OS="Any" UncompressedSize="15892579"/>
+  <DownloadableArchives>languages.7z,content.7z</DownloadableArchives>
+  <Licenses>
+   <License file="license-english.txt" name="Terms of use of the iRIC software"/>
+  </Licenses>
+  <SHA1>f06ae765f5d1d53a90e93edc8e9d18cd1a4a623a</SHA1>
+ </PackageUpdate>
+</Updates>

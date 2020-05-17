@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Package>
+	<DisplayName>Simple Grid Generator</DisplayName>
+	<Description>Simple Grid Generator</Description>
+	<Version>1.0.0</Version>
+	<Default>true</Default>
+	<ReleaseDate>2017-06-06</ReleaseDate>
+	<SortingPriority>50</SortingPriority>
+	<Script>installscript.qs</Script>
+</Package>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Package>
+	<DisplayName>NaysCUBE</DisplayName>
+	<Description>"NaysCUBE" is an analytical solver for calculation of unsteady three-dimensional open channel flows, riverbed deformations and driftwood behavior using boundary-fitted coordinates within generalized curvilinear coordinates.</Description>
+	<Version>3.43.3</Version>
+	<Default>true</Default>
+	<ReleaseDate>2018-06-28</ReleaseDate>
+	<SortingPriority>50</SortingPriority>
+	<Script>installscript.qs</Script>
+</Package>

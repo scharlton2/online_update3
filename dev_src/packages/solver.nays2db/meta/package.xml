@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Package>
+	<DisplayName>Nays2DH Bedrock2</DisplayName>
+	<Description>Nays2DH Bedrock2 iRIC.3x 1.0 64bit</Description>
+	<Version>1.5.300</Version>
+	<Default>true</Default>
+	<ReleaseDate>2020-02-14</ReleaseDate>
+	<SortingPriority>50</SortingPriority>
+	<Script>installscript.qs</Script>
+</Package>

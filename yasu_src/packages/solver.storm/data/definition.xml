@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SolverDefinition
+name="storm"
+caption="SToRM"
+version="0.4"
+copyright="None"
+release="2018.06.21"
+homepage="http://wwwbrr.cr.usgs.gov/gstl/"
+executable="STORM.exe"
+iterationtype="time"
+gridtype="unstructured2d"
+>
+
+<!-- Definitions for SToRM 0.3 track xsy
+     F. Simoes, February 2013 -->
+
+<!-- ................................................................................ -->
+<!--  Define the CALCULATION CONDITIONs.                                              -->
+<!--  This part defines the options screens that appear under "Calculation            -->
+<!--  Condition" in the main menu bar of iRIC 2.0.  These are individual parameters   -->
+<!--  related to the numerical solver, such as time stepping scheme, time step size,  -->
+<!--  etc.                                                                            -->
+<!-- ................................................................................ -->
+
+  <CalculationCondition>
+    <!-- 1st input screen: initial conditions.
+         This is used to define an initial uniform velocity field and stage.  It is a
+         conditional (Yes/No) model input.-->
+    <!-- Set-up a Yes/No pull-down menu. -->
+    <Tab name="iConds" caption="Initial Conditions">
+      <Item name="uniform_vinit" caption="Set-up initial conditions">
+        <Definition conditionType="constant" valueType="integer" option="true"
+                    default="0">
+          <Enumerations>
+            <Enumeration value="0" caption="From coverage polygons"/>
+            <Enumeration value="1" caption="Uniform initial conds."/>
+            <Enumeration value="2" caption="Use existing solution"/>
+          </Enumerations>
+        </Definition>
+      </Item>
+
+      <!-- Enter initial U, but only if pull-down option is set to Yes. -->
+      <Item name="u_init" caption="Starting value for U (m/s)">
+        <Definition valueType="real" default="0">
+          <Dependency>
+            <Condition type="and">
+              <Condition type="isEqual" target="uniform_vinit" value="1"/>
+            </Condition>
+            <Action type="enable"/>
+          </Dependency>
+        </Definition>
+      </Item>
+      <!-- Enter initial V, but only if pull-down option is set to Yes. -->
+      <Item name="v_init" caption="Starting value for V (m/s)">
+        <Definition valueType="real" default="0">
+          <Dependency>
+            <Condition type="and">
+              <Condition type="isEqual" target="uniform_vinit" value="1"/>
+            </Condition>
+            <Action type="enable"/>
+          </Dependency>
+        </Definition>
+      </Item>
+      <!-- Enter initial WSE, but only if pull-down option is set to Yes. -->
+      <Item name="w_init" caption="Water surface elevation (m)">
+        <Definition valueType="real" default="0">
+          <Dependency>
+            <Condition type="and">
+              <Condition type="isEqual" target="uniform_vinit" value="1"/>
+            </Condition>
+            <Action type="enable"/>
+          </Dependency>
+        </Definition>
+      </Item>
+
+      <!-- Enter file name to read existing flow solution. -->
+      <Item name="startup_file" caption="Solution file name">
+        <Definition conditionType="constant" valueType="filename" option="false"
+          default="case01.cgn">
+          <Dependency>
+            <Condition type="and">
+              <Condition type="isEqual" target="uniform_vinit" value ="2"/>
+            </Condition>
+            <Action type ="enable"/>
+          </Dependency>
+        </Definition>
+      </Item>
+    </Tab>
+
+    <!-- 2nd input screen: set-up thresholds for cell wetting and drying. -->
+    <Tab name="wetttingConds" caption="Cell Wetting and Drying Parameters">
+      <Item name="dry_thresh" caption="Threshold for drying cells (m)">
+        <Definition valueType="real" default="0.001">
+        </Definition>
+      </Item>
+      <Item name="wet_thresh" caption="Threshold for re-wetting cells">
+        <Definition valueType="real" default="2.0">
+        </Definition>
+      </Item>
+    </Tab>
+
+    <!-- 3rd input screen: set-up parameters for the numerical integration. -->
+    <!-- Select time integration scheme. -->
+    <Tab name="solutionParams" caption="Solution Parameters">
+      <Item name="tstep_method" caption="Time stepping method">
+        <Definition conditionType="constant" valueType="integer" option="true"
+                    default="1">
+          <Enumerations>
+            <Enumeration value="1" caption="Order 1"/>
+            <Enumeration value="2" caption="Order 2"/>
+            <Enumeration value="3" caption="Order 3"/>
+          </Enumerations>
+        </Definition>
+      </Item>
+      <!-- Time step size. -->
+      <Item name="tstep_size" caption="Time step size (s)">
+        <Definition valueType="real" default="0">
+        </Definition>
+      </Item>
+      <!-- Number of time steps to march the solution through. -->
+      <Item name="tstep_numbr" caption="Number of time steps">
+        <Definition valueType="string" default="0">
+        </Definition>
+      </Item>
+      <!-- Solution plotting interval. -->
+      <Item name="tstep_interval" caption="Plotting increment">
+        <Definition valueType="string" default="0">
+        </Definition>
+      </Item>
+
+      <!-- Parameter to allow large time steps.  It is set with a pull-down menu with a
+           conditional (Yes/No) clause to activate it. -->
+      <Item name="tstep_large" caption="Allow large time steps">
+        <Definition conditionType="constant" valueType="integer" option="true"
+                    default="0">
+          <Enumerations>
+            <Enumeration value="0" caption="No"/>
+            <Enumeration value="1" caption="Yes"/>
+          </Enumerations>
+        </Definition>
+      </Item>
+      <!-- If Yes is selected, enter largest allowed value for the magnitude of
+           velocity. -->
+      <Item name="tstep_large_val" caption="Maximum velocity (m/s)">
+        <Definition valueType="real" default="30">
+          <Dependency>
+            <Condition type="and">
+              <Condition type="isEqual" target="tstep_large" value="1"/>
+            </Condition>
+            <Action type="enable"/>
+          </Dependency>
+        </Definition>
+      </Item>
+    </Tab>
+
+    <!-- 4th input screen: general data. -->
+    <Tab name="iGeneralOptions" caption="General Options">
+      <!-- Choice of resistance coefficient. -->
+      <Item name="friction_option" caption="Type of resistance coefficient">
+        <Definition conditionType="constant" valueType="integer" option="true"
+                    default="0">
+          <Enumerations>
+            <Enumeration value="0" caption="Manning's"/>
+            <Enumeration value="1" caption="Chezy"/>
+            <Enumeration value="2" caption="Drag coefficient"/>
+          </Enumerations>
+        </Definition>
+      </Item>
+
+      <!-- This is used to activate culvert computations.  It is a conditional (Yes/No)
+         model input.-->
+      <!-- Set-up a Yes/No pull-down menu. -->
+      <Item name="culv_option" caption="Activate culvert computations">
+        <Definition conditionType="constant" valueType="integer" option="true"
+                    default="0">
+          <Enumerations>
+            <Enumeration value="0" caption="No"/>
+            <Enumeration value="1" caption="Yes"/>
+          </Enumerations>
+        </Definition>
+      </Item>
+      <!-- If Yes is selected, enter file name with culvert data. -->
+      <Item name="culv_file" caption="File with culvert data">
+        <Definition conditionType="constant" valueType="filename" option="false"
+          default="">
+          <Dependency>
+            <Condition type="and">
+              <Condition type="isEqual" target="culv_option" value ="1"/>
+            </Condition>
+            <Action type ="enable"/>
+          </Dependency>
+        </Definition>
+      </Item>
+
+      <!-- Wind forcing terms.  Activates wind computations.  It is a conditional
+        (Yes/No) model input. -->
+      <Item name="wind_option" caption="Activate wind forcing">
+        <Definition conditionType="constant" valueType="integer" option="true"
+             default="0">
+          <Enumerations>
+            <Enumeration value="0" caption="No"/>
+            <Enumeration value="1" caption="Yes"/>
+          </Enumerations>
+        </Definition>
+      </Item>
+    </Tab>
+
+  </CalculationCondition>
+
+<!-- ................................................................................ -->
+<!--  Define the GEOGRAPHIC DATA (Grid Related Conditions).                           -->
+<!--  This is what defines grid-coverage polygons, such as bed elevation and          -->
+<!--  roughness.  Quantities defined here appear under "Geographic Data" in the       -->
+<!--  "Object Browser" (left-most pane of the iRIC canvas) and can be defined by      -->
+<!--  creating polygons over the computational domain and assigning values to them.   -->
+<!-- ................................................................................ -->
+
+  <GridRelatedCondition>
+    <!-- Bed elevation. -->
+    <Item name="initial_z0" caption="Elevation">
+      <Definition position="node" valueType="real" default="max" />
+    </Item>
+    <!-- Bed roughness. -->
+    <Item name="initial_cd" caption="Roughness">
+      <Definition position="node" valueType="real" default="0.010" />
+    </Item>
+
+    <!-- Initial conditions defined by coverage polygons: U, V, and water surface
+         elevation. -->
+    <Item name="initial_u0" caption="Initial U">
+      <Definition position="node" valueType="real" default="0" />
+    </Item>
+    <Item name="initial_v0" caption="Initial V">
+      <Definition position="node" valueType="real" default="0" />
+    </Item>
+    <Item name="initial_wse" caption="Initial Stage">
+      <Definition position="node" valueType="real" default="0" />
+    </Item>
+
+    <!-- Wind forcing parameters defined by coverage polygons. -->
+    <Item name="wind_fric" caption="Wind Friction Coefficient">
+      <Definition position="node" valueType="real" default="0" />
+    </Item>
+    <Item name="wind_mag" caption="Wind Magnitude">
+      <Definition position="node" valueType="real" default="0" />
+    </Item>
+    <Item name="wind_dir" caption="Wind Direction (Azimuth)">
+      <Definition position="node" valueType="real" default="0" />
+    </Item>
+  </GridRelatedCondition>
+
+<!-- ................................................................................ -->
+<!--  Define the BOUNDARY CONDITIONs.                                                 -->
+<!-- ................................................................................ -->
+
+  <!-- This is the definition of inflow boundary.  It is a string of nodes and a table
+       ("functional") of time vs. flow discharge.-->
+  <BoundaryCondition name="inflow" caption="Inflow" position="node">
+    <!-- Type of inflow boundary: fixed or varying width. -->
+    <Item name="qin_type" caption="Type of inflow boundary">
+      <Definition conditionType="constant" valueType="integer" option="true"
+                  default="1">
+        <Enumerations>
+          <Enumeration value="1" caption="Fixed width"/>
+          <Enumeration value="5" caption="Variable width"/>
+        </Enumerations>
+      </Definition>
+    </Item>
+    <!-- Table with inflow hydrograph. -->
+    <Item name="qin" caption="Inflow discharge">
+      <Definition valueType="functional">
+        <Parameter valueType="real" caption="Time (s)" />
+        <Value valueType="real" caption="Discharge (m3/s)" />
+      </Definition>
+    </Item>
+  </BoundaryCondition>
+
+  <!-- This is the definition of outflow boundary.  It is a string of nodes and a table
+       ("functional") of time vs. water surface elevation (stage).-->
+  <BoundaryCondition name="outflow" caption="Outflow" position="node">
+    <Item name="etaout" caption="Outflow stage">
+      <Definition valueType="functional" default="0">
+        <Parameter valueType="real" caption="Time (s)" />
+        <Value valueType="real" caption="Stage (m)" />
+      </Definition>
+    </Item>
+  </BoundaryCondition>
+
+</SolverDefinition>

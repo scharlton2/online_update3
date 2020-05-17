@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Package>
+	<DisplayName>FaSTMECH</DisplayName>
+	<Description>FaSTMECH</Description>
+	<Version>1.1.1</Version>
+	<Default>true</Default>
+	<ReleaseDate>2018-08-20</ReleaseDate>
+	<SortingPriority>50</SortingPriority>
+	<Script>installscript.qs</Script>
+</Package>

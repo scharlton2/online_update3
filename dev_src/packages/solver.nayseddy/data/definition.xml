@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SolverDefinition
+ name="NaysEddy"
+ caption="NaysEddy v.1.1 x64"
+ version="1.1"
+ copyright="Mohamed Nabi"
+ release="2019.01.01"
+ homepage="http://www.mnabi.com/"
+ executable="NaysEddy_v1.1_x64.exe"
+ iterationtype="time"
+ gridtype="structured2d"
+>
+
+<CalculationCondition>
+
+    <Tab name="GridTab" caption="Grid">
+
+        <GroupBox caption="Domain">
+        <Item name="zminItm" caption="Minimum z [m]">
+        <Definition valueType="real" default="0">
+        </Definition>
+        </Item>
+
+        <Item name="zmaxItm" caption="Maximum z [m]">
+        <Definition valueType="real" default="1">
+        </Definition>
+        </Item>
+        </GroupBox>
+
+        <GroupBox caption="Grid points">
+        <Item name="kmaxItm" caption="nz (kmax=2^nz)">
+        <Definition valueType="integer" default="5">
+        </Definition>
+        </Item>
+        </GroupBox>
+
+    </Tab>
+
+    <Tab name="PropertyTab" caption="Flow conditions">
+
+        <Item name="viscItm" caption="Kinematic viscosity [m2/s]">
+        <Definition valueType="real" default="1.0e-6">
+        </Definition>
+        </Item>
+
+        <Item name="densItm" caption="Density [kg/m3]">
+        <Definition valueType="real" default="1000">
+        </Definition>
+        </Item>
+
+        <Item name="gravityItm" caption="Gravity [m/s2]">
+        <Definition valueType="real" default="9.81">
+        </Definition>
+        </Item>
+
+        <Item name="dischargeItm" caption="Discharge [m3/s]">
+        <Definition valueType="real" default="1">
+        </Definition>
+        </Item>
+
+    </Tab>
+
+    <Tab name="TimeTab" caption="Time conditions">
+
+        <Item name="starttimeItm" caption="Start time [s]">
+        <Definition valueType="real" default="0">
+        </Definition>
+        </Item>
+
+        <Item name="endtimeItm" caption="End time [s]">
+        <Definition valueType="real" default="100">
+        </Definition>
+        </Item>
+
+        <Item name="timetypeItm" caption="Time step type">
+        <Definition conditionType="constant" valueType="integer" option="true" default="0" max="1">
+        <Enumerations>
+        <Enumeration value="0" caption="Automatic"/>
+        <Enumeration value="1" caption="Constant"/>
+        </Enumerations>
+        </Definition>
+        </Item>
+
+        <Item name="cflItm" caption="CFL number">
+        <Definition valueType="real" default="0.35">
+        <Dependency>
+        <Condition type="isEqual" target="timetypeItm" value="0"/>
+        <Action type="enable"/>
+        </Dependency>
+        </Definition>
+        </Item>
+
+        <Item name="timestepItm" caption="Time step [s]">
+        <Definition valueType="real" default="2.0e-3">
+        <Dependency>
+        <Condition type="isEqual" target="timetypeItm" value="1"/>
+        <Action type="enable"/>
+        </Dependency>
+        </Definition>
+        </Item>
+
+    </Tab>
+
+    <Tab name="BoundaryTab" caption="Initial and B.C.">
+
+        <GroupBox caption="Boundary conditions">
+            <Item name="xBoundItm" caption="B.C. x-direction">
+            <Definition conditionType="constant" valueType="integer" option="true" default="0" max="1">
+            <Enumerations>
+            <Enumeration value="0" caption="Periodic"/>
+            </Enumerations>
+            </Definition>
+            </Item>
+
+            <Item name="yBoundItm" caption="B.C. y-direction">
+            <Definition conditionType="constant" valueType="integer" option="true" default="0" max="1">
+            <Enumerations>
+            <Enumeration value="0" caption="Periodic"/>
+            <Enumeration value="1" caption="Side-wall"/>
+            </Enumerations>
+            </Definition>
+            </Item>
+
+            <Item name="zBoundItm" caption="B.C. z-direction">
+            <Definition conditionType="constant" valueType="integer" option="true" default="0" max="1">
+            <Enumerations>
+            <Enumeration value="0" caption="Free Surface"/>
+            <Enumeration value="1" caption="Wall"/>
+            </Enumerations>
+            </Definition>
+            </Item>
+        </GroupBox>
+
+        <GroupBox caption="Initial conditions">
+            <Item name="InitialItm" caption="Initial conditions">
+            <Definition conditionType="constant" valueType="integer" option="true" default="0" max="1">
+            <Enumerations>
+            <Enumeration value="0" caption="Uniform discharge based"/>
+            <Enumeration value="1" caption="Uniform custom"/>
+            </Enumerations>
+            </Definition>
+            </Item>
+
+            <Item name="xInitItm" caption="x-velocity">
+            <Definition valueType="real" default="1.0">
+            <Dependency>
+            <Condition type="isEqual" target="InitialItm" value="1"/>
+            <Action type="enable"/>
+            </Dependency>
+            </Definition>
+            </Item>
+
+            <Item name="yInitItm" caption="y-velocity">
+            <Definition valueType="real" default="0.0">
+            <Dependency>
+            <Condition type="isEqual" target="InitialItm" value="1"/>
+            <Action type="enable"/>
+            </Dependency>
+            </Definition>
+            </Item>
+
+            <Item name="zInitItm" caption="z-velocity">
+            <Definition valueType="real" default="0.0">
+            <Dependency>
+            <Condition type="isEqual" target="InitialItm" value="1"/>
+            <Action type="enable"/>
+            </Dependency>
+            </Definition>
+            </Item>
+
+            <Item name="iPerturbItm" caption="Include initial perturbations">
+            <Definition conditionType="constant" valueType="integer" option="true" default="0" max="1">
+            <Enumerations>
+            <Enumeration value="0" caption="No"/>
+            <Enumeration value="1" caption="Yes"/>
+            </Enumerations>
+            </Definition>
+            </Item>
+
+            <Item name="amplitudeItm" caption="Perturbations amplitude">
+            <Definition valueType="real" default="1.0e-3">
+            <Dependency>
+            <Condition type="isEqual" target="iPerturbItm" value="1"/>
+            <Action type="enable"/>
+            </Dependency>
+            </Definition>
+            </Item>
+        </GroupBox>
+    </Tab>
+
+    <Tab name="BedTab" caption="Bed conditions">
+
+        <Item name="BedItm" caption="Bed type">
+        <Definition conditionType="constant" valueType="integer" option="true" default="0" max="2">
+        <Enumerations>
+        <Enumeration value="0" caption="Smooth bed"/>
+        <Enumeration value="1" caption="Sediment bed"/>
+        <Enumeration value="2" caption="Rough bed"/>
+        </Enumerations>
+        </Definition>
+        </Item>
+
+        <Item name="SedimentItm" caption="Sediment size [mm]">
+        <Definition valueType="real" default="1">
+        <Dependency>
+        <Condition type="isEqual" target="BedItm" value="1"/>
+        <Action type="enable"/>
+        </Dependency>
+        </Definition>
+        </Item>
+
+        <Item name="RoughItm" caption="Roughness height [mm]">
+        <Definition valueType="real" default="1">
+        <Dependency>
+        <Condition type="isEqual" target="BedItm" value="2"/>
+        <Action type="enable"/>
+        </Dependency>
+        </Definition>
+        </Item>
+
+        <Item name="iBedPerturbItm" caption="Add bed perturbations">
+        <Definition conditionType="constant" valueType="integer" option="true" default="0" max="1">
+        <Enumerations>
+        <Enumeration value="0" caption="No"/>
+        <Enumeration value="1" caption="Yes"/>
+        </Enumerations>
+        </Definition>
+        </Item>
+
+        <Item name="BAmplitudeItm" caption="Amplitude [mm]">
+        <Definition valueType="real" default="0.001">
+        <Dependency>
+        <Condition type="isEqual" target="iBedPerturbItm" value="1"/>
+        <Action type="enable"/>
+        </Dependency>
+        </Definition>
+        </Item>
+    </Tab>
+
+    <Tab name="SolutionTab" caption="Solution conditions">
+        <GroupBox caption="Turbulence">
+            <Item name="smagorinskyItm" caption="Smagorinsky constant">
+            <Definition valueType="real" default="0.16">
+            </Definition>
+            </Item>
+
+            <Item name="iIBMItm" caption="IBM interpolation">
+            <Definition conditionType="constant" valueType="integer" option="true" default="0" max="2">
+            <Enumerations>
+            <Enumeration value="0" caption="Tri-linear"/>
+            <Enumeration value="1" caption="Inverse-distance square"/>
+            </Enumerations>
+            </Definition>
+            </Item>
+        </GroupBox>
+
+        <GroupBox caption="Multigrid">
+            <Item name="iCycleItm" caption="Multigrid type">
+            <Definition conditionType="constant" valueType="integer" option="true" default="0" max="2">
+            <Enumerations>
+            <Enumeration value="0" caption="W-Cycle"/>
+            <Enumeration value="1" caption="V-Cycle"/>
+            </Enumerations>
+            </Definition>
+            </Item>
+
+            <Item name="igammaItm" caption="Cycle index">
+            <Definition valueType="integer" default="2" min="2">
+            <Dependency>
+            <Condition type="isEqual" target="iCycleItm" value="0"/>
+            <Action type="enable"/>
+            </Dependency>
+            </Definition>
+            </Item>
+
+            <Item name="ipresItm" caption="Pre-smoothing">
+            <Definition valueType="integer" default="1" >
+            </Definition>
+            </Item>
+
+            <Item name="ipostsItm" caption="Post-smoothing">
+            <Definition valueType="integer" default="1" >
+            </Definition>
+            </Item>
+
+            <Item name="kpoismaxItm" caption="Maximum cycles per time iteration">
+            <Definition valueType="integer" default="50" max="1000">
+            </Definition>
+            </Item>
+
+            <Item name="epsItm" caption="Stop criterion">
+            <Definition valueType="real" default="1.0e-8">
+            </Definition>
+            </Item>
+        </GroupBox>
+    </Tab>
+
+    <Tab name="HotstartTab" caption="Hot Start conditions">
+
+        <Item name="HotstartItm" caption="Hot start">
+        <Definition conditionType="constant" valueType="integer" option="true" default="0" max="1">
+        <Enumerations>
+        <Enumeration value="0" caption="No"/>
+        <Enumeration value="1" caption="Yes"/>
+        </Enumerations>
+        </Definition>
+        </Item>
+
+        <Item name="StartfileItm" caption="Starting file">
+        <Definition valueType="filename" option="true" default="saved.dat">
+        <Dependency>
+        <Condition type="isEqual" target="HotstartItm" value="1"/>
+        <Action type="enable"/>
+        </Dependency>
+        </Definition>
+        </Item>
+
+        <Item name="TimeInitialItm" caption="Initialize time">
+        <Definition conditionType="constant" valueType="integer" option="true" default="0" max="1">
+        <Enumerations>
+        <Enumeration value="0" caption="No"/>
+        <Enumeration value="1" caption="Yes"/>
+        </Enumerations>
+        <Dependency>
+        <Condition type="isEqual" target="HotstartItm" value="1"/>
+        <Action type="enable"/>
+        </Dependency>
+        </Definition>
+        </Item>
+
+    </Tab>
+
+    <Tab name="OutputTab" caption="Output">
+
+        <Item name="OTimeItm" caption="Time interval for iRic output [s]">
+        <Definition valueType="real" default="1"></Definition>
+        </Item>
+
+        <Item name="HotoutItm" caption="Output for hot start">
+        <Definition conditionType="constant" valueType="integer" option="true" default="0" max="1">
+        <Enumerations>
+        <Enumeration value="0" caption="No"/>
+        <Enumeration value="1" caption="Yes"/>
+        </Enumerations>
+        </Definition>
+        </Item>
+
+        <Item name="dtHotoutItm" caption="Time interval for hot start [s]">
+        <Definition valueType="real" default="1">
+        <Dependency>
+        <Condition type="isEqual" target="HotoutItm" value="1"/>
+        <Action type="enable"/>
+        </Dependency>
+        </Definition>
+        </Item>
+
+        <Item name="TecplotItm" caption="Tecplot output">
+        <Definition conditionType="constant" valueType="integer" option="true" default="0" max="1">
+        <Enumerations>
+        <Enumeration value="0" caption="No"/>
+        <Enumeration value="1" caption="Yes"/>
+        </Enumerations>
+        </Definition>
+        </Item>
+
+        <Item name="dtTecplotItm" caption="Time interval for Tecplot [s]">
+        <Definition valueType="real" default="1">
+        <Dependency>
+        <Condition type="isEqual" target="TecplotItm" value="1"/>
+        <Action type="enable"/>
+        </Dependency>
+        </Definition>
+        </Item>
+
+        <Item name="outpathItm" caption="Output folder">
+        <Definition valueType="foldername" default="c:\temp"> </Definition>
+        </Item>
+
+        <Item name="outfileItm" caption="Output file name">
+        <Definition valueType="string" default="output"> </Definition>
+        </Item>
+
+    </Tab>
+
+
+
+
+
+
+</CalculationCondition>
+
+
+<GridRelatedCondition>
+
+        <Item name="Elevation" caption="Elevation">
+        <Definition position="node" valueType="real" default="max" />
+        </Item>
+
+</GridRelatedCondition>
+
+</SolverDefinition>

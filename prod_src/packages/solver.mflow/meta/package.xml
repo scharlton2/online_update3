@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Package>
+	<DisplayName>Mflow</DisplayName>
+	<Description>Mflow_02 is a solver to calculate two-dimensional plane unsteady flow and riverbed variation using unstructured meshes of the finite element method.</Description>
+	<Version>3.1.1</Version>
+	<Default>true</Default>
+	<ReleaseDate>2018-05-21</ReleaseDate>
+	<SortingPriority>50</SortingPriority>
+	<Script>installscript.qs</Script>
+</Package>

@@ -1,0 +1,50 @@
+version: '{branch}-{build}'
+
+# Skip any branches that start with two underscores (__)
+branches:
+  except:
+    - /__.*/
+
+# This allows testing of GUI
+# See https://help.appveyor.com/discussions/questions/678-gui-unit-testing-in-appveyor
+# and https://twitter.com/appveyor/status/525658624593375236
+os: unstable
+
+environment:
+  matrix:
+    - BUILD_TYPE: PROD
+    - BUILD_TYPE: DEV
+    # BUILD_TYPE: YASU
+
+matrix:
+  fast_finish: false
+
+init:
+  - echo %BUILD_TYPE%
+  - if "%BUILD_TYPE%"=="PROD" (set SRC=prod_src)
+  - if "%BUILD_TYPE%"=="DEV"  (set SRC=dev_src)
+  - if "%BUILD_TYPE%"=="YASU" (set SRC=yasu_src)
+
+before_build:
+  - ps: '[xml]$def = Get-Content .\$Env:SRC\packages\gui.prepost\data\definition.xml'
+  - ps: $Env:SHA1=$def.GuiDefinition.'github-sha1'.Substring(0,8)
+  - ps: $Env:RELEASE="{0:D2}" -f [int]$def.GuiDefinition.'release'.Split('.')[0].SubString(2,2) + "{0:D2}" -f [int]$def.GuiDefinition.'release'.Split('.')[1] + "{0:D2}" -f [int]$def.GuiDefinition.'release'.Split('.')[2]
+
+build_script:
+  - C:\Qt\Tools\QtInstallerFramework\2.0\bin\binarycreator --offline-only -c %SRC%/config/config.xml -p %SRC%/packages iRIC_Installer_%RELEASE%_%SHA1%.exe
+  - appveyor PushArtifact iRIC_Installer_%RELEASE%_%SHA1%.exe
+  # build versions with no runtime libraries
+  # rd /s /q %SRC%\packages\runtime
+  # C:\Qt\Tools\QtInstallerFramework\2.0\bin\binarycreator --offline-only -c %SRC%/config/config.xml -p %SRC%/packages iRIC_Installer_No_Runtime_%RELEASE%_%SHA1%.exe
+  # appveyor PushArtifact iRIC_Installer_No_Runtime_%RELEASE%_%SHA1%.exe
+
+before_test:
+  # list what's installed
+  - ps: wmic PRODUCT GET Name,Version | Out-File Installed.txt
+  - appveyor PushArtifact Installed.txt
+  # install pyautogui
+  - py -m pip install pyautogui
+
+test_script:
+  # py install_runtime.py
+  - py run_iric_install.py

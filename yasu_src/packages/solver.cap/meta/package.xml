@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Package>
+	<DisplayName>CAP</DisplayName>
+	<Description>Culvart Analysis Program</Description>
+	<Version>2.0.4</Version>
+	<Default>true</Default>
+	<ReleaseDate>2018-05-22</ReleaseDate>
+	<SortingPriority>50</SortingPriority>
+	<Script>installscript.qs</Script>
+</Package>

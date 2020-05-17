@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Package>
+	<DisplayName>SToRM</DisplayName>
+	<Description></Description>
+	<Version>0.4.0</Version>
+	<Default>true</Default>
+	<ReleaseDate>2018-06-21</ReleaseDate>
+	<SortingPriority>50</SortingPriority>
+	<Script>installscript.qs</Script>
+</Package>

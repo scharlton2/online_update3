@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Package>
+	<DisplayName>iRIC GUI 4.0</DisplayName>
+	<Description>iRIC Main GUI</Description>
+	<Version>3.99.0.6239</Version>
+	<ReleaseDate>2018-12-20</ReleaseDate>
+	<SortingPriority>100</SortingPriority>
+	<ForcedInstallation>true</ForcedInstallation>
+	<Script>installscript.qs</Script>
+	<Licenses>
+		<License name="Terms of use of the iRIC software" file="license-english.txt" />
+	</Licenses>
+</Package>

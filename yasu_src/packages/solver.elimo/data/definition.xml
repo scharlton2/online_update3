@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SolverDefinition 
+	xmlns="www.iric.net/SolverDefinition/1.0"
+	name="elimo" caption="Elimo" version="2.0.1" copyright="Yasunori Watanabe"
+	release="2018.5.28" homepage="http://i-ric.org"
+	executable="elimo.exe"
+	iterationtype="time"
+	 gridtype="structured2d"
+>
+	<CalculationCondition>
+    <Tab name="FaultC" caption="File Input of Fault Rupture Conditions">
+      <Content>
+        <Items>
+          <Item name="InputManner" caption="Which manner to input fault conditions?">
+            <Definition conditionType="constant" valueType="integer" option="true" default="1">
+              <Enumerations>
+                <Enumeration value="1" caption="Manual Input"/>
+                <Enumeration value="2" caption="File Input"/>
+              </Enumerations>
+            </Definition>
+          </Item>
+          <Item name="FaultConditions" caption="File Name of Fault Conditions">
+            <Definition conditionType="constant" valueType="filename" option="false" default="N/A">
+            </Definition>
+          </Item>
+        </Items>
+      </Content>
+    </Tab>
+		<Tab name="Fault" caption="Fault Rupture Conditions (Manual)">
+			<Content>
+				<Items>
+
+					<Item name="Longitude" caption="Longitude of Fault Top (deg)">
+						<Definition conditionType="constant" valueType="real" option="false" default="144.55">
+						</Definition>
+					</Item>
+					<Item name="Latitude" caption="Latitude of of Fault Top (deg)">
+						<Definition conditionType="constant" valueType="real" option="false" default="42.12">
+						</Definition>
+					</Item>
+					<Item name="Length" caption="Rupture length (km)">
+						<Definition conditionType="constant" valueType="real" option="false" default="85.7">
+						</Definition>
+					</Item>					
+					<Item name="Width" caption="Rupture width (km)">
+						<Definition conditionType="constant" valueType="real" option="false" default="41.5">
+						</Definition>
+					</Item>					
+					<Item name="Slip" caption="Slip length (m)">
+						<Definition conditionType="constant" valueType="real" option="false" default="5.19">
+						</Definition>
+					</Item>					
+					<Item name="Strike" caption="Strike angle (deg)">
+						<Definition conditionType="constant" valueType="real" option="false" default="231.0">
+						</Definition>
+					</Item>					
+					<Item name="Dip" caption="Dip angle (deg)">
+						<Definition conditionType="constant" valueType="real" option="false" default="22.0">
+						</Definition>
+					</Item>					
+					<Item name="Rake" caption="Rake angle (deg)">
+						<Definition conditionType="constant" valueType="real" option="false" default="110.0">
+						</Definition>
+					</Item>
+          <Item name="Depth" caption="Fault Depth (km)">
+            <Definition conditionType="constant" valueType="real" option="false" default="53.2">
+            </Definition>
+          </Item>
+        </Items>
+				
+			</Content>
+		</Tab>
+
+		<Tab name="SecondFault" caption="Second Fault Rupture Conditions (Manual)">
+			<Content>
+				<Items>
+
+					<Item name="Longitude2" caption="Longitude of 2nd Fault Top (deg)">
+						<Definition conditionType="constant" valueType="real" option="false" default="0">
+						</Definition>
+					</Item>
+					<Item name="Latitude2" caption="Latitude of of 2nd Fault Top (deg)">
+						<Definition conditionType="constant" valueType="real" option="false" default="0">
+						</Definition>
+					</Item>
+					<Item name="Length2" caption="Rupture length (km)">
+						<Definition conditionType="constant" valueType="real" option="false" default="0">
+						</Definition>
+					</Item>					
+					<Item name="Width2" caption="Rupture width (km)">
+						<Definition conditionType="constant" valueType="real" option="false" default="0">
+						</Definition>
+					</Item>					
+					<Item name="Slip2" caption="Slip length (m)">
+						<Definition conditionType="constant" valueType="real" option="false" default="0">
+						</Definition>
+					</Item>					
+					<Item name="Strike2" caption="Strike angle (deg)">
+						<Definition conditionType="constant" valueType="real" option="false" default="0">
+						</Definition>
+					</Item>					
+					<Item name="Dip2" caption="Dip angle (deg)">
+						<Definition conditionType="constant" valueType="real" option="false" default="0">
+						</Definition>
+					</Item>					
+					<Item name="Rake2" caption="Rake angle (deg)">
+						<Definition conditionType="constant" valueType="real" option="false" default="0">
+						</Definition>
+					</Item>
+          <Item name="Depth2" caption="Fault Depth (km)">
+            <Definition conditionType="constant" valueType="real" option="false" default="0">
+            </Definition>
+          </Item>
+        </Items>
+				
+			</Content>
+		</Tab>
+		
+		<Tab name="Comp" caption="Computing Conditions">
+			<Content>
+				<Items>
+
+					<Item name="Maxstp" caption="Maximum time step number">
+						<Definition conditionType="constant" valueType="integer" option="false" default="400" max="999999">
+						</Definition>
+					</Item>
+					<Item name="Interval" caption="Time step interval to output results">
+						<Definition conditionType="constant" valueType="integer" option="false" default="10" max="999999">
+						</Definition>
+					</Item>
+					<Item name="Dlayer" caption="Numbers of grid points required for an absorbing sponge zone">
+						<Definition conditionType="constant" valueType="integer" option="false" default="20" max="100">
+						</Definition>
+					</Item>
+					<Item name="Damp" caption="Amplification factor for wave dissipation in an absorbing sponge zone">
+						<Definition conditionType="constant" valueType="real" option="false" default="0.05" max="10.0">
+						</Definition>
+					</Item>
+				</Items>
+				
+			</Content>
+		</Tab>		
+	</CalculationCondition>
+	<GridRelatedCondition>
+			<!-- RMCD changed Bed Elevation to Elevation for consistency in MD_SWMS -->
+		<Item name="Elevation" caption="Elevation">
+			<Definition position="node" valueType="real" default="10" />
+		</Item>
+	</GridRelatedCondition>
+</SolverDefinition>
